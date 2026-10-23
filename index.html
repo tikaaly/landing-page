@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tikaaly Global Land Market</title>
+
+    <meta
+        name="description"
+        content="Agent Tikaaly connects buyers with land opportunities across strategic locations around the world."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f7f8fa;
+            color: #111827;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --navy: #071a33;
+            --navy-light: #0d294b;
+            --gold: #c9a227;
+            --gold-light: #e6ca68;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light: #f7f8fa;
+            --border: #e5e7eb;
+            --dark: #0b1220;
+        }
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin: 0 auto 55px;
+            text-align: center;
+        }
+
+        .section-heading span {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.15;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+            font-size: 16px;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .top-bar {
+            background: var(--dark);
+            color: #dce3ec;
+            padding: 9px 0;
+            font-size: 13px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar strong {
+            color: var(--gold-light);
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-weight: 800;
+            color: var(--navy);
+            font-size: 20px;
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--navy);
+            color: var(--gold-light);
+            display: grid;
+            place-items: center;
+            font-family: "Playfair Display", serif;
+            font-size: 21px;
+            border: 1px solid var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-contact {
+            padding: 11px 17px;
+            border-radius: 8px;
+            background: var(--navy);
+            color: white !important;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 27px;
+            cursor: pointer;
+            color: var(--navy);
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(201,162,39,.18), transparent 28%),
+                linear-gradient(135deg, #06162b, #0b2949 55%, #071a33);
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(201,162,39,.2);
+            border-radius: 50%;
+            right: -180px;
+            top: -150px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px solid rgba(201,162,39,.12);
+            border-radius: 50%;
+            right: 40px;
+            bottom: -210px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 13px;
+            border: 1px solid rgba(230,202,104,.35);
+            background: rgba(255,255,255,.05);
+            border-radius: 100px;
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: var(--gold-light);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.02;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 em {
+            color: var(--gold-light);
+            font-style: normal;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #d3dce7;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 590;
+            font-size: 17px;
+            transition: 0.33s;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.35);
+            color: white;
+            background: rgba(255,255,255,.04);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            margin-top: -45px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 20px 60px rgba(7,26,51,.12);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .stat {
+            padding: 28px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* =========================
+           LAND CARDS
+        ========================== */
+
+        .land-section {
+            background: white;
+        }
+
+        .filter-area {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+            padding: 10px 17px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #4b5563;
+            transition: .3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--navy);
+            color: white;
+            border-color: var(--navy);
+        }
+
+        .land-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .land-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            background: white;
+            transition: .35s;
+        }
+
+        .land-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(7,26,51,.12);
+        }
+
+        .land-top {
+            min-height: 175px;
+            padding: 25px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, #081b34, #153f62);
+        }
+
+        .land-top::before {
+            content: "PROPERTY";
+            position: absolute;
+            font-size: 70px;
+            font-weight: 900;
+            color: rgba(255,255,255,.035);
+            transform: rotate(-12deg);
+            top: 35px;
+            left: -15px;
+        }
+
+        .location-tag {
+            position: relative;
+            z-index: 2;
+            color: var(--gold-light);
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .land-body {
+            padding: 24px;
+        }
+
+        .land-body h3 {
+            color: var(--navy);
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .land-description {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .property-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            padding: 11px;
+            background: #f7f8fa;
+            border-radius: 8px;
+        }
+
+        .info-box small {
+            display: block;
+            color: var(--gray);
+            font-size: 11px;
+            margin-bottom: 2px;
+        }
+
+        .info-box strong {
+            color: var(--navy);
+            font-size: 13px;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 18px;
+        }
+
+        .price small {
+            color: var(--gray);
+            display: block;
+            font-size: 11px;
+        }
+
+        .price strong {
+            color: var(--navy);
+            font-size: 21px;
+        }
+
+        .discount {
+            background: #ecfdf5;
+            color: #047857;
+            padding: 6px 9px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        /* =========================
+           DISCOUNT
+        ========================== */
+
+        .discount-section {
+            background: var(--navy);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discount-section::after {
+            content: "10%";
+            position: absolute;
+            right: -30px;
+            top: -90px;
+            font-size: 300px;
+            font-weight: 900;
+            color: rgba(255,255,255,.025);
+        }
+
+        .discount-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .discount-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(34px, 5vw, 55px);
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        .discount-content p {
+            color: #c9d3df;
+            max-width: 650px;
+        }
+
+        .discount-badge {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: var(--gold-light);
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        .discount-badge small {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .about h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 5vw, 55px);
+            line-height: 1.1;
+            color: var(--navy);
+            margin: 14px 0 22px;
+        }
+
+        .about p {
+            color: var(--gray);
+            margin-bottom: 18px;
+        }
+
+        .values {
+            display: grid;
+            gap: 13px;
+            margin-top: 25px;
+        }
+
+        .value {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+        }
+
+        .check {
+            width: 25px;
+            height: 25px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: #f8f2dd;
+            color: var(--gold);
+            display: grid;
+            place-items: center;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .about-card {
+            background: var(--navy);
+            color: white;
+            border-radius: 18px;
+            padding: 45px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 1px solid rgba(201,162,39,.3);
+            border-radius: 50%;
+            right: -90px;
+            top: -70px;
+        }
+
+        .about-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .about-card p {
+            color: #ccd7e4;
+        }
+
+        /* =========================
+           PROCESS
+        ========================== */
+
+        .process {
+            background: #f0f3f6;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            background: white;
+            padding: 28px;
+            border-radius: 13px;
+            border: 1px solid var(--border);
+        }
+
+        .process-number {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .process-card h3 {
+            margin: 12px 0 8px;
+            color: var(--navy);
+        }
+
+        .process-card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =========================
+           TESTIMONIALS
+        ========================== */
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .testimonial {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            background: white;
+        }
+
+        .stars {
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial p {
+            color: #4b5563;
+            font-size: 14px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial strong {
+            color: var(--navy);
+            font-size: 14px;
+        }
+
+        .sample-note {
+            text-align: center;
+            color: var(--gray);
+            font-size: 12px;
+            margin-top: 25px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: linear-gradient(135deg, #071a33, #0c2d4e);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .contact h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 5vw, 55px);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .contact p {
+            color: #c9d4df;
+            margin-bottom: 25px;
+        }
+
+        .contact-number {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gold-light);
+            margin-bottom: 25px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .contact-card-item {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .contact-card-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-card-item small {
+            color: #9eb0c4;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .contact-card-item strong {
+            color: white;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #040e1c;
+            color: #9ba9b8;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            color: white;
+            font-weight: 800;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 76px;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 25px 4%;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 15px 30px rgba(0,0,0,.08);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(1),
+            .stat:nth-child(2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .land-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .discount-content {
+                grid-template-columns: 1fr;
+            }
+
+            .discount-badge {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .top-bar-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 47px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats {
+                margin-top: -25px;
+            }
+
+            .stats-grid,
+            .land-grid,
+            .process-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .about-card {
+                padding: 30px;
+            }
+
+            .contact-number {
+                font-size: 23px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span>Global Land Opportunities</span>
+            <span><strong>10% Off</strong> Upon Acre Purchases</span>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <a href="#home" class="logo">
+                <span class="logo-mark">TK</span>
+                <span>AGENT TIKAALY</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#properties">Properties</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#process">How It Works</a>
+                </li>
+
+                <li>
+                    <a href="#stories">Customer Stories</a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="nav-contact">Contact Agent</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content reveal">
+
+                    <div class="eyebrow">
+                        Global Real Estate Opportunities
+                    </div>
+
+                    <h1>
+                        Own Your Piece
+                        Of <em>The World.</em>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover land opportunities across strategic locations
+                        around the world. From individual plots to large acreage,
+                        Agent Tikaaly connects you with property opportunities
+                        suited to your goals.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#properties" class="btn btn-gold">
+                            Explore Land
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline">
+                            Speak With Agent Casio
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================== -->
+
+        <section class="stats">
+
+            <div class="container stats-grid">
+
+                <div class="stat">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-label">Example Markets</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">10%</div>
+                    <div class="stat-label">Acre Discount</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Inquiry Access</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">Global</div>
+                    <div class="stat-label">Property Reach</div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROPERTIES
+        ========================== -->
+
+        <section class="section land-section" id="properties">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span>Land Opportunities</span>
+
+                    <h2>
+                        Explore Available Locations
+                    </h2>
+
+                    <p>
+                        Browse example opportunities by market.
+                        Exact availability, documentation and current
+                        pricing are provided directly when you contact us.
+                    </p>
+
+                </div>
+
+
+                <div class="filter-area">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-filter="africa">
+                        Africa
+                    </button>
+
+                    <button class="filter-btn" data-filter="america">
+                        North America
+                    </button>
+
+                    <button class="filter-btn" data-filter="europe">
+                        Europe
+                    </button>
+
+                    <button class="filter-btn" data-filter="middle-east">
+                        Middle East
+                    </button>
+
+                </div>
+
+
+                <div class="land-grid">
+
+
+                    <!-- NIGERIA -->
+
+                    <article class="land-card reveal" data-region="africa">
+
+                        <div class="land-top">
+                            <div class="location-tag">
+                                Lagos, Nigeria
+                            </div>
+                        </div>
+
+                        <div class="land-body">
+
+                            <h3>Residential Land</h3>
+
+                            <p class="land-description">
+                                Land opportunity suitable for
+                                residential development and long-term investment, available for sale and lease.
+                            </p>
+
+                            <div class="property-info">
+
+                                <div class="info-box">
+                                    <small>Available Size</small>
+                                    <strong>600 sqm</strong>
+                                </div>
+
+                                <div class="info-box">
+                                    <small>Category</small>
+                                    <strong>Residential</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="price">
+
+                                <div>
+                                    <small>Price</small>
+                                    <h4>Depends on Location</4>
+                                </div>
+
+                                <span class="discount">
+                                    Ask for current price
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- GHANA -->
+
+                    <article class="land-card reveal" data-region="africa">
+
+                        <div class="land-top">
+                            <div class="location-tag">
+                                Accra, Ghana
+                            </div>
+                        </div>
+
+                        <div class="land-body">
+
+                            <h3>Development Plot</h3>
+
+                            <p class="land-description">
+                                Land suitable for residential, commercial or
+                                investment-focused development.
+                            </p>
+
+                            <div class="property-info">
+
+                                <div class="info-box">
+                                    <small>Available Size</small>
+                                    <strong>1,000 sqm</strong>
+                                </div>
+
+                                <div class="info-box">
+                                    <small>Category</small>
+                                    <strong>Development</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="price">
+
+                                <div>
+                                    <small>Price</small>
+                                    <h4>Depending on Location</h4>
+                                </div>
+
+                                <span class="discount">
+                                    Contact us for details
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DUBAI -->
+
+                    <article class="land-card reveal" data-region="middle-east">
+
+                        <div class="land-top">
+                            <div class="location-tag">
+                                Dubai, UAE
+                            </div>
+                        </div>
+
+                        <div class="land-body">
+
+                            <h3>Premium Land</h3>
+
+                            <p class="land-description">
+                                Premium property opportunity in a
+                                recognized real estate market.
+                            </p>
+
+                            <div class="property-info">
+
+                                <div class="info-box">
+                                    <small>Available Size</small>
+                                    <strong>2,000 sqm</strong>
+                                </div>
+
+                                <div class="info-box">
+                                    <small>Category</small>
+                                    <strong>Investment</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="price">
+
+                                <div>
+                                    <small>Price</small>
+                                    <h4>Depends on Location</h4>
+                                </div>
+
+                                <span class="discount">
+                                    Contact us
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TEXAS -->
+
+                    <article class="land-card reveal" data-region="america">
+
+                        <div class="land-top">
+                            <div class="location-tag">
+                                Texas, USA
+                            </div>
+                        </div>
+
+                        <div class="land-body">
+
+                            <h3>Country Land</h3>
+
+                            <p class="land-description">
+                                Spacious land opportunity suitable for
+                                residential, agricultural or investment use.
+                            </p>
+
+                            <div class="property-info">
+
+                                <div class="info-box">
+                                    <small>Available Size</small>
+                                    <strong>5 Acres</strong>
+                                </div>
+
+                                <div class="info-box">
+                                    <small>Category</small>
+                                    <strong>Land</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="price">
+
+                                <div>
+                                    <small>Example price from</small>
+                                    <p>Depending on location</p>
+                                </div>
+
+                                <span class="discount">
+                                    10% Acre Offer
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- UK -->
+
+                    <article class="land-card reveal" data-region="europe">
+
+                        <div class="land-top">
+                            <div class="location-tag">
+                                London, UK
+                            </div>
+                        </div>
+
+                        <div class="land-body">
+
+                            <h3>Strategic Property Land</h3>
+
+                            <p class="land-description">
+                                Property opportunity for buyers seeking
+                                strategic real estate exposure.
+                            </p>
+
+                            <div class="property-info">
+
+                                <div class="info-box">
+                                    <small>Available Size</small>
+                                    <strong>1 Acre</strong>
+                                </div>
+
+                                <div class="info-box">
+                                    <small>Category</small>
+                                    <strong>For Sale & Lease</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="price">
+
+                                <div>
+                                    <small>Example price from</small>
+                                    <p>Depends on location</p>
+                                </div>
+
+                                <span class="discount">
+                                    Contact us
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CANADA -->
+
+                    <article class="land-card reveal" data-region="america">
+
+                        <div class="land-top">
+                            <div class="location-tag">
+                                Toronto, Canada
+                            </div>
+                        </div>
+
+                        <div class="land-body">
+
+                            <h3>Investment Land</h3>
+
+                            <p class="land-description">
+                                Land opportunity for buyers interested in
+                                long-term property investment.
+                            </p>
+
+                            <div class="property-info">
+
+                                <div class="info-box">
+                                    <small>Available Size</small>
+                                    <strong>3 Acres</strong>
+                                </div>
+
+                                <div class="info-box">
+                                    <small>Category</small>
+                                    <strong>Investment</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="price">
+
+                                <div>
+                                    <small>Example price from</small>
+                                    <strong>Depends on plot size</strong>
+                                </div>
+
+                                <span class="discount">
+                                    Contact us
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DISCOUNT
+        ========================== -->
+
+        <section class="section discount-section">
+
+            <div class="container discount-content">
+
+                <div>
+
+                    <span class="eyebrow">
+                        Special Acreage Offer
+                    </span>
+
+                    <h2>
+                        Get 10% Off<br>
+                        Acre Purchases.
+                    </h2>
+
+                    <p>
+                        Looking for larger parcels of land?
+                        Ask Agent Casio about the current acreage offer.
+                        Availability, location, documentation and final pricing
+                        are confirmed directly with customers.
+                    </p>
+
+                </div>
+
+                <div class="discount-badge">
+                    <div>
+                        10%
+                        <small>OFF ACRES</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="section about" id="about">
+
+            <div class="container about-grid">
+
+                <div class="reveal">
+
+                    <span class="about-label">
+                        About US
+                    </span>
+
+                    <h2>
+                        Property Opportunities With A Global Vision.
+                    </h2>
+
+                    <p>
+                        We focused real on estate brand,
+                        connecting interested buyers with property opportunities
+                        across different Countries.
+                    </p>
+
+                    <p>
+                        Whether you are searching for a residential plot,
+                        investment land, acreage or a larger development parcel,
+                        our goal is to make the discovery process simple and direct.
+                    </p>
+
+                    <div class="values">
+
+                        <div class="value">
+                            <span class="check">✓</span>
+                            <span>Global land opportunities</span>
+                        </div>
+
+                        <div class="value">
+                            <span class="check">✓</span>
+                            <span>Direct customer communication</span>
+                        </div>
+
+                        <div class="value">
+                            <span class="check">✓</span>
+                            <span>Flexible land sizes</span>
+                        </div>
+
+                        <div class="value">
+                            <span class="check">✓</span>
+                            <span>Property information provided upon inquiry</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-card reveal">
+
+                    <h3>
+                        Your Land Search Starts Here.
+                    </h3>
+
+                    <p>
+                        Tell us the location, land size and purpose you are
+                        interested in, we will provide you with the relevant
+                        property information directly.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROCESS
+        ========================== -->
+
+        <section class="section process" id="process">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span>Simple Process</span>
+
+                    <h2>
+                        How It Works
+                    </h2>
+
+                    <p>
+                        No complicated registration process.
+                        Start by reaching out directly.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-card reveal">
+                        <span class="process-number"></span>
+                        <h3>Choose a Location</h3>
+                        <p>
+                            Tell us the country, city or area you are interested in.
+                        </p>
+                    </div>
+
+                    <div class="process-card reveal">
+                        <span class="process-number"></span>
+                        <h3>Let Us Your Needs</h3>
+                        <p>
+                            Let us know whether you need a plot, acre or larger parcel.
+                        </p>
+                    </div>
+
+                    <div class="process-card reveal">
+                        <span class="process-number"></span>
+                        <h3>Receive Details</h3>
+                        <p>
+                            Property information, pricing and availability are
+                            discussed directly upon inquiry.
+                        </p>
+                    </div>
+
+                    <div class="process-card reveal">
+                        <span class="process-number"></span>
+                        <h3>Make Your Decision</h3>
+                        <p>
+                            Review the information and proceed according to
+                            your own needs.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TESTIMONIALS
+        ========================== -->
+
+        <section class="section" id="stories">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+        <h3 style="text-align: center; color: goldenrod;"> CONTACT </h3>
+
+        <section class="section contact" id="contact">
+
+            <div class="container contact-grid">
+
+                <div class="reveal">
+
+                    <span class="eyebrow">
+                        Start Your Land Search
+                    </span>
+
+                    <h2>
+                        Tell Al Itikaaly What You're Looking For.
+                    </h2>
+
+                    <p>
+                        If you are interested in a particular country, city, plot size
+                        or acreage, please reach out to us directly and request the current
+                        property information.
+                    </p>
+
+                    <div class="contact-number">
+                        +234 816 824 2808
+                    </div>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="https://wa.me/2349027529982"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-gold"
+                        >
+                            Our Whatsapp digit
+                        </a>
+
+                        <a
+                            href="https://www.youtube.com/@Agentcasuo809youtubechan"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline"
+                        >
+                            Visit YouTube
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-card-item">
+                        <small>Phone / WhatsApp</small>
+                        <strong>+234 816 824 2808</strong>
+                    </div>
+
+                    <div class="contact-card-item">
+                        <small>Service</small>
+                        <strong>Global Land Opportunities</strong>
+                    </div>
+
+                    <div class="contact-card-item">
+                        <small>Land Sizes</small>
+                        <strong> By Plots, Acres, & Large Parcels</strong>
+                    </div>
+
+                    <div class="contact-card-item">
+                        <small>Acreage Offer</small>
+                        <strong>10% Off — Confirm Current Terms</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-logo">
+                AGENT CASIO
+            </div>
+
+            <div>
+                © <span id="year"></span> Agent Casio. All rights reserved.
+            </div>
+
+            <div class="footer-links">
+
+                <a
+                    href="https://wa.me/2348008080890"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@Agentcasuo809youtubechan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
